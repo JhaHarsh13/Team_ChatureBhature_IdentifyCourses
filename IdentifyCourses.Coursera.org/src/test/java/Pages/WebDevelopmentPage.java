@@ -1,15 +1,24 @@
 package Pages;
 
 import java.time.Duration;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import ConfigureReader.ConfigReader;
+import UtilityFile.ExcelUtils;
+
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -24,19 +33,20 @@ public class WebDevelopmentPage {
 	@FindBy(xpath="//*[@id='search-autocomplete-input']")
 	WebElement inputField;
 	
+	
 	@FindBy(xpath="//button[contains(@class,'search-button')]/*")
 	WebElement searchButton;
 	
-	@FindBy(xpath="(//*[contains(text(),'English')])[1]")
+	@FindBy(xpath="//*[contains(text(),'English')]")
 	WebElement englishElement;
 	
-	@FindBy(xpath="//div[@data-testid='language:English-false']/*/span/*/input")
+	@FindBy(xpath="//div[contains(@data-testid,'language:English')]/*/span/*/input")
 	WebElement englishElementCheckBox;
 	
-	@FindBy(xpath="(//span[contains(text(),'Beginner')])[1]")
+	@FindBy(xpath="//span[contains(text(),'Beginner')]")
 	WebElement beginnerElement;
 	
-	@FindBy(xpath="//div[@data-testid='productDifficultyLevel:Beginner-false']/*/span/*/input")
+	@FindBy(xpath="//div[contains(@data-testid,'productDifficultyLevel:Beginner')]/*/span/*/input")
 	WebElement beginnerElementCheckBox;
 	
 	@FindBy(xpath="//h3[contains(@class, 'cds-CommonCard-title')]")
@@ -48,9 +58,8 @@ public class WebDevelopmentPage {
 	@FindBy(xpath="//div[@class='cds-CommonCard-metadata']/p")
 	List<WebElement> timeElements;
 	
-	public void enterElementandClickToSearch(String entry1) {
-		wait.until(ExpectedConditions.visibilityOf(inputField)).clear();
-		wait.until(ExpectedConditions.visibilityOf(inputField)).sendKeys(entry1);
+	public void enterElementandClickToSearchWeb(String entry) {
+		wait.until(ExpectedConditions.visibilityOf(inputField)).sendKeys(entry);
 		wait.until(ExpectedConditions.elementToBeClickable(searchButton)).click();
 		
 	}
@@ -87,4 +96,5 @@ public class WebDevelopmentPage {
 			System.err.println();
 		}
 	}
+	
 }
