@@ -8,7 +8,8 @@ public class ConfigReader {
 	private static Properties property;
 	static {
 		try {
-			InputStream file= ConfigReader.class.getClassLoader().getSystemResourceAsStream("data.properties");
+			FileInputStream file= new FileInputStream("C:\\Users\\2408293\\git\\Team_ChatureBhature_IdentifyCourses\\IdentifyCourses.Coursera.org\\data.properties");
+			property=new Properties();
 			property.load(file);
 		}catch(Exception ex) {
 			System.out.println(ex);
