@@ -29,7 +29,7 @@ public class ExcelUtils {
 			rowNum++;
 		}
 		
-		FileOutputStream outPutFile=new FileOutputStream(System.getProperty("user.dir")+"\\resources\\Count_Of_Languages.xlsx");
+		FileOutputStream outPutFile=new FileOutputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\Count_Of_Languages.xlsx");
 		workBook.write(outPutFile);
 		workBook.close();
 		
