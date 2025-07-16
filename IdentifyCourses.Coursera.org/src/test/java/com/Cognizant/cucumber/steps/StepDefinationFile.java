@@ -77,7 +77,7 @@ public class StepDefinationFile {
 		enterprisePage.scrollToForm();
 	}
 	@When("I fill the contact form with invalid details like firstName, lastName, email, phoneNo, title, name")
-	public void enteringDataToForm(String firstNameInMethod, String lastNameInMethod, String emailInMethod, String phoneNoInMethod, String titleInMethod, String nameInMethod) {
+	public void enteringDataToForm() {
 		enterprisePage.setValuesIntoForm(firstName, lastName, email, phoneNo, title, name);
 	}
 	@And("I click on submit button")
@@ -88,6 +88,7 @@ public class StepDefinationFile {
 	public void verifyingIfErrorMessageIsCapturedOrNot() throws Exception{
 		enterprisePage.takeScreenShot();
 		enterprisePage.displayErrorMessage();
+		driver.quit();
 	}
 	
 }
