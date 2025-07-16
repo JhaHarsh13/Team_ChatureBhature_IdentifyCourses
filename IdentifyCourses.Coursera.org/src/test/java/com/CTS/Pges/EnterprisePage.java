@@ -19,17 +19,16 @@ import org.openqa.selenium.TakesScreenshot;
 public class EnterprisePage {
 	WebDriver driver;
 	WebDriverWait wait;
+	JavascriptExecutor js;
 	public EnterprisePage(WebDriver driver) {
 		this.driver=driver;
-		this.wait=new WebDriverWait(driver,Duration.ofSeconds(50));
+		this.wait=new WebDriverWait(driver,Duration.ofSeconds(120));
+		this.js=(JavascriptExecutor)driver;
 		PageFactory.initElements(driver,this);
 	}
 	
 	@FindBy(xpath="//a[contains(text(),'For Enterprise')]")
 	WebElement enterpriseElementText;
-	
-	@FindBy(xpath="(//h2[@class='cds-119 css-13rt5ey cds-121'])[2]")
-	WebElement submitFormText;
 	
 	@FindBy(id="FirstName")
 	WebElement firstNameField;
@@ -71,7 +70,6 @@ public class EnterprisePage {
 	WebElement errorMsg;
 	
 	public void scrollAndClickForEnterprise() throws Exception{
-		JavascriptExecutor js= (JavascriptExecutor)driver;
 		//WebElement elementToBeScrolled=wait.until(ExpectedConditions.visibilityOf(enterpriseElementText));
 		WebElement enterpriseEle=wait.until(ExpectedConditions.elementToBeClickable(enterpriseElementText));
 		js.executeScript("arguments[0].scrollIntoView(true);", enterpriseEle);
@@ -79,14 +77,16 @@ public class EnterprisePage {
 	}
 	
 	public void scrollToForm() {
-		JavascriptExecutor js= (JavascriptExecutor)driver;
-		WebElement scrollEle=wait.until(ExpectedConditions.visibilityOf(submitFormText));
+		WebElement scrollEle=wait.until(ExpectedConditions.visibilityOf(firstNameField));
 		js.executeScript("arguments[0].scrollIntoView(true);", scrollEle);
 		
 	}
 	
 	public void setValuesIntoForm(String firstName,String lastName,String email,String phoneNo,String title,String name) {
-		wait.until(ExpectedConditions.visibilityOf(firstNameField)).sendKeys(firstName);
+		WebElement fNameEle=wait.until(ExpectedConditions.elementToBeClickable(firstNameField));
+		
+		//js.executeScript("arguments[0].value="+firstName+";", fNameEle);
+		js.executeScript("arguments[0].value=arguments[1];",fNameEle, firstName);
 		wait.until(ExpectedConditions.visibilityOf(lastNameField)).sendKeys(lastName);
 		wait.until(ExpectedConditions.visibilityOf(emailField)).sendKeys(email);
 		wait.until(ExpectedConditions.visibilityOf(phoneField)).sendKeys(phoneNo);
@@ -96,16 +96,16 @@ public class EnterprisePage {
 		wait.until(ExpectedConditions.visibilityOf(companyField)).sendKeys(name);
 		Select sizeDropDown=new Select(wait.until(ExpectedConditions.visibilityOf(companySizeField)));
 		sizeDropDown.selectByValue("501-1000");
-		Select needsDropDown=new Select(wait.until(ExpectedConditions.visibilityOf()));
+		Select needsDropDown=new Select(wait.until(ExpectedConditions.visibilityOf(needs)));
 		needsDropDown.selectByValue("Courses for myself");
-		Select countryDropDown=new Select(countryField);
+		Select countryDropDown=new Select(wait.until(ExpectedConditions.visibilityOf(countryField)));
 		countryDropDown.selectByValue("India");
-		Select stateDropDown=new Select(stateField);
+		Select stateDropDown=new Select(wait.until(ExpectedConditions.visibilityOf(stateField)));
 		stateDropDown.selectByValue("Maharashtra");		
 	}
 	
 	public void submitForm() {
-		submitBtn.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitBtn)).click();
 	}
 	
 	public void takeScreenShot() throws Exception{
@@ -116,7 +116,7 @@ public class EnterprisePage {
 		System.out.println("ScreenShot taken");
 	}
 	public void displayErrorMessage() {
-		String str=errorMsg.getText();
+		String str=wait.until(ExpectedConditions.visibilityOf(errorMsg)).getText();
 		System.out.println("The error message is:" + str);
 		
 	}
