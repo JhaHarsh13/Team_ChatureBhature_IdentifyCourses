@@ -1,5 +1,6 @@
 package Pages;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.List;
 
@@ -10,7 +11,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class EnterprisePage {
 	WebDriver driver;
@@ -100,6 +104,14 @@ public class EnterprisePage {
 	
 	public void submitForm() {
 		submitBtn.click();
+	}
+	
+	public void takeScreenShot() throws Exception{
+		File srcFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		long timeStamp=System.currentTimeMillis();
+		File outFile=new File(System.getProperty("user.dir")+"//ScreenShot//screenshot("+timeStamp+").png");
+		FileUtils.copyFile(srcFile, outFile);
+		System.out.println("ScreenShot taken");
 	}
 	public void displayErrorMessage() {
 		String str=errorMsg.getText();
