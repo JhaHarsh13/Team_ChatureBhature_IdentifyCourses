@@ -29,7 +29,6 @@ public class StepDefinationFile {
 	private String phoneNo=ConfigReader.getProperty("phoneNo");
 	private String title=ConfigReader.getProperty("title");
 	private String name=ConfigReader.getProperty("name");
-	private Assertion assertion;
 	
 	@Given("I open the Coursera.org home page")
 	public void open_CourseraOrg_Home_Page() {
@@ -52,7 +51,15 @@ public class StepDefinationFile {
 		System.out.println("Entered the method");
 		webPage.printingTheDesiredResult();
 		driver.quit();
+		
 	}
+	
+	@Given("I am on the Web Development page and go back to the Coursera.org home page")
+	public void navigating_to_CourseraOrg_Home_Page_again() {
+		driver.navigate().to(baseUrl);
+		driver.manage().window().maximize();
+	}
+	
 	
 	@When("I search Language Learning")
 	public void searchLanguageLearning() {

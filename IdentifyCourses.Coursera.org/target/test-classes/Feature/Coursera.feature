@@ -6,7 +6,7 @@ Feature: Coursera Website Automation
 		Then I should retrieve details of the first two course cards
 		
 	Scenario: Search Language Learning and get all languages
-		Given I open the Coursera.org home page
+		Given I am on the Web Development page and go back to the Coursera.org home page
 		When I search Language Learning
 		Then I should retrieve all the languages
 	
