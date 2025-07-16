@@ -96,8 +96,6 @@ public class EnterprisePage {
 		wait.until(ExpectedConditions.visibilityOf(companyField)).sendKeys(name);
 		Select sizeDropDown=new Select(wait.until(ExpectedConditions.visibilityOf(companySizeField)));
 		sizeDropDown.selectByValue("501-1000");
-		Select needsDropDown=new Select(wait.until(ExpectedConditions.visibilityOf()));
-		needsDropDown.selectByValue("Courses for myself");
 		Select countryDropDown=new Select(countryField);
 		countryDropDown.selectByValue("India");
 		Select stateDropDown=new Select(stateField);
