@@ -21,7 +21,7 @@ public class EnterprisePage {
 	WebDriverWait wait;
 	public EnterprisePage(WebDriver driver) {
 		this.driver=driver;
-		this.wait=new WebDriverWait(driver,Duration.ofSeconds(30));
+		this.wait=new WebDriverWait(driver,Duration.ofSeconds(50));
 		PageFactory.initElements(driver,this);
 	}
 	
@@ -75,7 +75,7 @@ public class EnterprisePage {
 		//WebElement elementToBeScrolled=wait.until(ExpectedConditions.visibilityOf(enterpriseElementText));
 		WebElement enterpriseEle=wait.until(ExpectedConditions.elementToBeClickable(enterpriseElementText));
 		js.executeScript("arguments[0].scrollIntoView(true);", enterpriseEle);
-		enterpriseEle.click();
+		js.executeScript("arguments[0].click();", enterpriseEle);
 	}
 	
 	public void scrollToForm() {
@@ -86,17 +86,17 @@ public class EnterprisePage {
 	}
 	
 	public void setValuesIntoForm(String firstName,String lastName,String email,String phoneNo,String title,String name) {
-		firstNameField.sendKeys(firstName);
-		lastNameField.sendKeys(lastName);
-		emailField.sendKeys(email);
-		phoneField.sendKeys(phoneNo);
-		Select orgDropDown=new Select(organisationField);
+		wait.until(ExpectedConditions.visibilityOf(firstNameField)).sendKeys(firstName);
+		wait.until(ExpectedConditions.visibilityOf(lastNameField)).sendKeys(lastName);
+		wait.until(ExpectedConditions.visibilityOf(emailField)).sendKeys(email);
+		wait.until(ExpectedConditions.visibilityOf(phoneField)).sendKeys(phoneNo);
+		Select orgDropDown=new Select(wait.until(ExpectedConditions.visibilityOf(organisationField)));
 		orgDropDown.selectByValue("Business");
-		jobTitle.sendKeys(title);
-		companyField.sendKeys(name);
-		Select sizeDropDown=new Select(companySizeField);
+		wait.until(ExpectedConditions.visibilityOf(jobTitle)).sendKeys(title);
+		wait.until(ExpectedConditions.visibilityOf(companyField)).sendKeys(name);
+		Select sizeDropDown=new Select(wait.until(ExpectedConditions.visibilityOf(companySizeField)));
 		sizeDropDown.selectByValue("501-1000");
-		Select needsDropDown=new Select(needs);
+		Select needsDropDown=new Select(wait.until(ExpectedConditions.visibilityOf()));
 		needsDropDown.selectByValue("Courses for myself");
 		Select countryDropDown=new Select(countryField);
 		countryDropDown.selectByValue("India");
