@@ -49,6 +49,7 @@ public class StepDefinationFile {
 	}
 	@Then("I should retrieve details of the first two course cards")
 	public void verifyIfableToRetrieveIfoOfFirstTwoCards() throws Exception{
+		System.out.println("Entered the method");
 		webPage.printingTheDesiredResult();
 		driver.quit();
 	}
@@ -75,7 +76,7 @@ public class StepDefinationFile {
 	public void I_am_on_Enterprise_page_I_scroll_to_Form() {
 		enterprisePage.scrollToForm();
 	}
-	@When("I fill the contact form with invalid details like firstName{string}, lastName{string}, email{string}, phoneNo{string}, title{string}, name{string}")
+	@When("I fill the contact form with invalid details like firstName, lastName, email, phoneNo, title, name")
 	public void enteringDataToForm(String firstNameInMethod, String lastNameInMethod, String emailInMethod, String phoneNoInMethod, String titleInMethod, String nameInMethod) {
 		enterprisePage.setValuesIntoForm(firstName, lastName, email, phoneNo, title, name);
 	}

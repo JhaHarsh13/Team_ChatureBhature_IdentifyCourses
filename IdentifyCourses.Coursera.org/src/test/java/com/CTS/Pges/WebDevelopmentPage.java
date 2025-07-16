@@ -50,7 +50,7 @@ public class WebDevelopmentPage {
 	@FindBy(xpath="//div[contains(@data-testid,'productDifficultyLevel:Beginner')]/*/span/*/input")
 	WebElement beginnerElementCheckBox;
 	
-	@FindBy(xpath="//h3[contains(@class, 'cds-CommonCard-title')]")
+	@FindBy(xpath="//h3[contains(@class, 'title')]")
 	List <WebElement> courseNames;
 	
 	@FindBy(xpath="//span[@class='css-6ecy9b']")
@@ -82,24 +82,17 @@ public class WebDevelopmentPage {
 	}
 	
 	public void printingTheDesiredResult() {
-		String courseName;
-		String reviews;
-		String timePeriod;
-		boolean check=false;
 		for(int i=0; i<2; i++) {
-			String time=timeElements.get(i).getText();
+			String time=wait.until(ExpectedConditions.visibilityOfAllElements(timeElements)).get(i).getText();
 			String regex="\\d+\\s*-\\s*\\d+\\s*(Months|Weeks)";
 			Pattern pattern=Pattern.compile(regex);
 			Matcher matcher=pattern.matcher(time);
-			courseName=courseNames.get(i).getText();
-			reviews=reviewEle.get(i).getText();
-			System.out.print("Course Names: "+courseName+", ");
-			System.out.print("Reviews: "+reviews+", ");
+			System.out.print("Course Names: "+wait.until(ExpectedConditions.visibilityOfAllElements(courseNames)).get(i).getText()+", ");
+			System.out.print("Reviews: "+wait.until(ExpectedConditions.visibilityOfAllElements(reviewEle)).get(i).getText()+", ");
 			while(matcher.find()) {
-				timePeriod=matcher.group()+"";
-				System.err.print("Learning period: "+timePeriod+" ");
+				System.out.print("Learning period: "+matcher.group()+" ");
 			}
-			System.err.println();
+			System.out.println();
 		}
 	}
 	
