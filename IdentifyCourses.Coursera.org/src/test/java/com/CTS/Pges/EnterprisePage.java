@@ -1,4 +1,4 @@
-package Pages;
+package com.CTS.Pges;
 
 import java.io.File;
 import java.time.Duration;
@@ -73,13 +73,15 @@ public class EnterprisePage {
 	public void scrollAndClickForEnterprise() throws Exception{
 		JavascriptExecutor js= (JavascriptExecutor)driver;
 		//WebElement elementToBeScrolled=wait.until(ExpectedConditions.visibilityOf(enterpriseElementText));
-		js.executeScript("arguments[0].scrollIntoView(true);", enterpriseElementText);
-		enterpriseElementText.click();
+		WebElement enterpriseEle=wait.until(ExpectedConditions.elementToBeClickable(enterpriseElementText));
+		js.executeScript("arguments[0].scrollIntoView(true);", enterpriseEle);
+		enterpriseEle.click();
 	}
 	
 	public void scrollToForm() {
 		JavascriptExecutor js= (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", submitFormText);
+		WebElement scrollEle=wait.until(ExpectedConditions.visibilityOf(submitFormText));
+		js.executeScript("arguments[0].scrollIntoView(true);", scrollEle);
 		
 	}
 	
@@ -109,7 +111,7 @@ public class EnterprisePage {
 	public void takeScreenShot() throws Exception{
 		File srcFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		long timeStamp=System.currentTimeMillis();
-		File outFile=new File(System.getProperty("user.dir")+"//ScreenShot//screenshot("+timeStamp+").png");
+		File outFile=new File(System.getProperty("user.dir")+"//ScreenShot//Screenshot("+timeStamp+").png");
 		FileUtils.copyFile(srcFile, outFile);
 		System.out.println("ScreenShot taken");
 	}
