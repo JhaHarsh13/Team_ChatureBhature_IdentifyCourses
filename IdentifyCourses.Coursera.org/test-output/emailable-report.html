@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="8">Default suite</th></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">80,434</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">com.TestNg.TestNGRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="2">1752653549034</td><td rowspan="2">30727</td></tr><tr class="failedeven"><td><a href="#m1">runScenario</a></td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.TestNg.TestNGRunner</td><td><a href="#m2">runScenario</a></td><td rowspan="1">1752653579782</td><td rowspan="1">38477</td></tr></tbody>
+</table>
+<h2>Default test</h2><h3 id="m0">com.TestNg.TestNGRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Search WebDevelopment and retrieve info of first two course card&quot;</td><td>&quot;Coursera Website Automation&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy23.get(Unknown Source)
+	at com.CTS.Pges.WebDevelopmentPage.printingTheDesiredResult(WebDevelopmentPage.java:90)
+	at com.Cognizant.cucumber.steps.StepDefinationFile.verifyIfableToRetrieveIfoOfFirstTwoCards(StepDefinationFile.java:52)
+	at ✽.I should retrieve details of the first two course cards(file:///C:/Users/2408293/git/Team_ChatureBhature_IdentifyCourses/IdentifyCourses.Coursera.org/src/test/resources/Feature/Coursera.feature:6)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.TestNg.TestNGRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Submit invalid form on Coursera.org For Enterprise page&quot;</td><td>&quot;Coursera Website Automation&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a data-click-key=&quot;front_page.front_page_story.click.seo_directory_link&quot; data-click-value=&quot;{&amp;quot;href&amp;quot;:&amp;quot;/business?utm_campaign=website&amp;amp;utm_content=corp-to-home-footer-for-enterprise&amp;amp;utm_medium=coursera&amp;amp;utm_source=enterprise&amp;quot;,&amp;quot;namespace&amp;quot;:{&amp;quot;action&amp;quot;:&amp;quot;click&amp;quot;,&amp;quot;app&amp;quot;:&amp;quot;front_page&amp;quot;,&amp;quot;component&amp;quot;:&amp;quot;seo_directory_link&amp;quot;,&amp;quot;page&amp;quot;:&amp;quot;front_page_story&amp;quot;},&amp;quot;schema_type&amp;quot;:&amp;quot;FRONTEND&amp;quot;}&quot; data-track=&quot;true&quot; data-track-app=&quot;front_page&quot; data-track-page=&quot;front_page_story&quot; data-track-action=&quot;click&quot; data-track-component=&quot;seo_directory_link&quot; data-track-href=&quot;/business?utm_campaign=website&amp;amp;utm_content=corp-to-home-footer-for-enterprise&amp;amp;utm_medium=coursera&amp;amp;utm_source=enterprise&quot; href=&quot;/business?utm_campaign=website&amp;amp;utm_content=corp-to-home-footer-for-enterprise&amp;amp;utm_medium=coursera&amp;amp;utm_source=enterprise&quot; to=&quot;/business?utm_campaign=website&amp;amp;utm_content=corp-to-home-footer-for-enterprise&amp;amp;utm_medium=coursera&amp;amp;utm_source=enterprise&quot; class=&quot;rc-SubFooterSection__content-column-link-text&quot;&gt;...&lt;/a&gt; is not clickable at point (93, 109). Other element would receive the click: &lt;div class=&quot;cds-9 css-1gryyec cds-10 cds-11 cds-grid-item cds-18&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=137.0.7151.69)
+Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1f9853f57d42a3fa23a1ff76a9e08f11, clickElement {id=f.3C9F9E11ADDABA091B4BDC2B12D068FE.d.FE0F70D51AAC4F061EA1EB064290F13F.e.35}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\2408293\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52264}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52264/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (1f9853f57d42a3fa23a1ff76a9e08f11)] -&gt; xpath: //a[contains(text(),&apos;For Enterprise&apos;)]]
+Session ID: 1f9853f57d42a3fa23a1ff76a9e08f11
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy22.click(Unknown Source)
+	at com.CTS.Pges.EnterprisePage.scrollAndClickForEnterprise(EnterprisePage.java:78)
+	at com.Cognizant.cucumber.steps.StepDefinationFile.I_am_on_the_Cousera_org_page_and_I_navigate_to_For_Enterprise_Page(StepDefinationFile.java:71)
+	at ✽.I am on the Cousera.org page and I navigate to For Enterprise Page(file:///C:/Users/2408293/git/Team_ChatureBhature_IdentifyCourses/IdentifyCourses.Coursera.org/src/test/resources/Feature/Coursera.feature:14)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.TestNg.TestNGRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Search Language Learning and get all languages&quot;</td><td>&quot;Coursera Website Automation&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>

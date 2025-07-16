@@ -1,4 +1,4 @@
-package Pages;
+package com.CTS.Pges;
 
 import java.time.Duration;
 import java.util.HashSet;
@@ -13,8 +13,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.CTS.UtilityPackage.ExcelUtils;
+
 import ConfigureReader.ConfigReader;
-import UtilityFile.ExcelUtils;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -81,17 +82,22 @@ public class WebDevelopmentPage {
 	}
 	
 	public void printingTheDesiredResult() {
-		String timeArr[];
+		String courseName;
+		String reviews;
+		String timePeriod;
+		boolean check=false;
 		for(int i=0; i<2; i++) {
 			String time=timeElements.get(i).getText();
 			String regex="\\d+\\s*-\\s*\\d+\\s*(Months|Weeks)";
 			Pattern pattern=Pattern.compile(regex);
 			Matcher matcher=pattern.matcher(time);
-			System.out.print("Course Names: "+courseNames.get(i).getText()+", ");
-			System.out.print("Reviews: "+reviewEle.get(i).getText()+", ");
+			courseName=courseNames.get(i).getText();
+			reviews=reviewEle.get(i).getText();
+			System.out.print("Course Names: "+courseName+", ");
+			System.out.print("Reviews: "+reviews+", ");
 			while(matcher.find()) {
-				String resultTime=matcher.group()+"";
-				System.err.print("Learning period: "+resultTime+" ");
+				timePeriod=matcher.group()+"";
+				System.err.print("Learning period: "+timePeriod+" ");
 			}
 			System.err.println();
 		}
