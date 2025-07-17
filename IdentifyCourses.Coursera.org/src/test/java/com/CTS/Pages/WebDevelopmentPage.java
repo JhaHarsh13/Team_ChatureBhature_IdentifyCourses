@@ -1,5 +1,4 @@
-package com.CTS.Pges;
-
+package com.CTS.Pages;
 import java.time.Duration;
 import java.util.HashSet;
 import java.util.List;
@@ -13,9 +12,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.CTS.ConfigureReader.ConfigReader;
 import com.CTS.UtilityPackage.ExcelUtils;
-
-import ConfigureReader.ConfigReader;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -28,7 +26,7 @@ public class WebDevelopmentPage {
 	WebDriverWait wait;
 	public WebDevelopmentPage(WebDriver driver) {
 		this.driver=driver;
-		this.wait=new WebDriverWait(driver, Duration.ofSeconds(30));
+		this.wait=new WebDriverWait(driver, Duration.ofSeconds(20));
 		PageFactory.initElements(driver, this);
 	}
 	@FindBy(xpath="//*[@id='search-autocomplete-input']")
@@ -59,7 +57,7 @@ public class WebDevelopmentPage {
 	@FindBy(xpath="//div[@class='cds-CommonCard-metadata']/p")
 	List<WebElement> timeElements;
 	
-	public void enterElementandClickToSearchWeb(String entry) {
+	public void enterElementandClickToSearchWeb(String entry) throws Exception {
 		wait.until(ExpectedConditions.visibilityOf(inputField)).sendKeys(entry);
 		wait.until(ExpectedConditions.elementToBeClickable(searchButton)).click();
 		
