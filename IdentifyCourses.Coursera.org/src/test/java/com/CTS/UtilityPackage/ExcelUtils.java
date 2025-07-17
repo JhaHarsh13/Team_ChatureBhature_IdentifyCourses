@@ -1,4 +1,4 @@
-package UtilityFile;
+package com.CTS.UtilityPackage;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -12,7 +12,7 @@ import java.util.Set;
 
 public class ExcelUtils {
 	public static void writingToExcel(Set <String> set) throws Exception{
-		FileInputStream file=new FileInputStream("C:\\Users\\2408293\\git\\Team_ChatureBhature_IdentifyCourses\\IdentifyCourses.Coursera.org\\src\\test\\resources\\Count_Of_Languages.xlsx");
+		FileInputStream file=new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\Count_Of_Languages.xlsx");
 		Workbook workBook=new XSSFWorkbook(file);
 		file.close();
 		Sheet sheet = workBook.getNumberOfSheets()==0 ? workBook.createSheet("Languages Count") : workBook.getSheetAt(0);
@@ -29,10 +29,9 @@ public class ExcelUtils {
 			rowNum++;
 		}
 		
-		FileOutputStream outPutFile=new FileOutputStream("C:\\Users\\2408293\\git\\Team_ChatureBhature_IdentifyCourses\\IdentifyCourses.Coursera.org\\src\\test\\resources\\Count_Of_Languages.xlsx");
+		FileOutputStream outPutFile=new FileOutputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\Count_Of_Languages.xlsx");
 		workBook.write(outPutFile);
 		workBook.close();
-		
 		
 	}
 }

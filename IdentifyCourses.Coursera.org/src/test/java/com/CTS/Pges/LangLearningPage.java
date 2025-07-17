@@ -1,4 +1,4 @@
-package Pages;
+package com.CTS.Pges;
 
 import java.time.Duration;
 import java.util.HashSet;
@@ -13,8 +13,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.CTS.UtilityPackage.ExcelUtils;
+
 import ConfigureReader.ConfigReader;
-import UtilityFile.ExcelUtils;
 
 public class LangLearningPage {
 	WebDriver driver;
@@ -41,7 +42,6 @@ public class LangLearningPage {
 	List <WebElement> listOfLanguage;
 	
 	public void enterElementandClickToSearchLang(String entry) {
-		driver.navigate().to(baseUrl);
 		wait.until(ExpectedConditions.visibilityOf(inputField)).sendKeys(entry);
 		wait.until(ExpectedConditions.elementToBeClickable(searchButton)).click();
 		

@@ -1,4 +1,4 @@
-package Pages;
+package com.CTS.Pges;
 
 import java.time.Duration;
 import java.util.HashSet;
@@ -13,8 +13,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.CTS.UtilityPackage.ExcelUtils;
+
 import ConfigureReader.ConfigReader;
-import UtilityFile.ExcelUtils;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -49,7 +50,7 @@ public class WebDevelopmentPage {
 	@FindBy(xpath="//div[contains(@data-testid,'productDifficultyLevel:Beginner')]/*/span/*/input")
 	WebElement beginnerElementCheckBox;
 	
-	@FindBy(xpath="//h3[contains(@class, 'cds-CommonCard-title')]")
+	@FindBy(xpath="//h3[contains(@class, 'title')]")
 	List <WebElement> courseNames;
 	
 	@FindBy(xpath="//span[@class='css-6ecy9b']")
@@ -81,19 +82,17 @@ public class WebDevelopmentPage {
 	}
 	
 	public void printingTheDesiredResult() {
-		String timeArr[];
 		for(int i=0; i<2; i++) {
-			String time=timeElements.get(i).getText();
+			String time=wait.until(ExpectedConditions.visibilityOfAllElements(timeElements)).get(i).getText();
 			String regex="\\d+\\s*-\\s*\\d+\\s*(Months|Weeks)";
 			Pattern pattern=Pattern.compile(regex);
 			Matcher matcher=pattern.matcher(time);
-			System.out.print("Course Names: "+courseNames.get(i).getText()+", ");
-			System.out.print("Reviews: "+reviewEle.get(i).getText()+", ");
+			System.out.print("Course Names: "+wait.until(ExpectedConditions.visibilityOfAllElements(courseNames)).get(i).getText()+", ");
+			System.out.print("Reviews: "+wait.until(ExpectedConditions.visibilityOfAllElements(reviewEle)).get(i).getText()+", ");
 			while(matcher.find()) {
-				String resultTime=matcher.group()+"";
-				System.err.print("Learning period: "+resultTime+" ");
+				System.out.print("Learning period: "+matcher.group()+" ");
 			}
-			System.err.println();
+			System.out.println();
 		}
 	}
 	
