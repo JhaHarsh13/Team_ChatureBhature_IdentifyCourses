@@ -3,12 +3,17 @@
   <reporter-output>
   </reporter-output>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <suite started-at="2025-07-17T10:57:19 IST" name="Default suite" finished-at="2025-07-17T11:00:28 IST" duration-ms="188808">
+=======
+  <suite started-at="2025-07-17T10:57:23 IST" name="Default suite" finished-at="2025-07-17T10:59:16 IST" duration-ms="113716">
+>>>>>>> dc442eeb9f09fcd02cafd3e0c019e07919f5140b
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.TestNg.TestNGRunner@682b2fa]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
+<<<<<<< HEAD
     <test started-at="2025-07-17T10:57:19 IST" name="Default test" finished-at="2025-07-17T11:00:28 IST" duration-ms="188808">
       <class name="com.TestNg.TestNGRunner">
         <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.TestNg.TestNGRunner@682b2fa]" started-at="2025-07-17T10:57:19 IST" name="setUpClass" finished-at="2025-07-17T10:57:20 IST" duration-ms="510" status="PASS">
@@ -16,6 +21,15 @@
             <param index="0">
               <value>
                 <![CDATA[org.testng.TestRunner@4e224df5]]>
+=======
+    <test started-at="2025-07-17T10:57:23 IST" name="Default test" finished-at="2025-07-17T10:59:16 IST" duration-ms="113716">
+      <class name="com.TestNg.TestNGRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.TestNg.TestNGRunner@682b2fa]" started-at="2025-07-17T10:57:23 IST" name="setUpClass" finished-at="2025-07-17T10:57:23 IST" duration-ms="278" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@415a3f6a]]>
+>>>>>>> dc442eeb9f09fcd02cafd3e0c019e07919f5140b
 =======
   <suite started-at="2025-07-17T14:15:46 IST" name="Default suite" finished-at="2025-07-17T14:18:23 IST" duration-ms="156357">
     <groups>
@@ -35,7 +49,11 @@
           </reporter-output>
         </test-method> <!-- setUpClass -->
 <<<<<<< HEAD
+<<<<<<< HEAD
         <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.TestNg.TestNGRunner@682b2fa]" started-at="2025-07-17T10:57:20 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-17T10:58:32 IST" duration-ms="72905" status="FAIL">
+=======
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.TestNg.TestNGRunner@682b2fa]" started-at="2025-07-17T10:57:23 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-17T10:57:54 IST" duration-ms="31488" status="PASS">
+>>>>>>> dc442eeb9f09fcd02cafd3e0c019e07919f5140b
 =======
         <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.CTS.TestNg.TestNGRunner@44c03695]" started-at="2025-07-17T14:15:47 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-17T14:16:31 IST" duration-ms="44899" status="PASS">
 >>>>>>> e43d8473d04542eedaa8126607a4fadb24888de7
@@ -100,7 +118,11 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
           </reporter-output>
         </test-method> <!-- runScenario -->
 <<<<<<< HEAD
+<<<<<<< HEAD
         <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.TestNg.TestNGRunner@682b2fa]" started-at="2025-07-17T10:58:32 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-17T10:58:55 IST" duration-ms="22833" status="PASS">
+=======
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.TestNg.TestNGRunner@682b2fa]" started-at="2025-07-17T10:57:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-17T10:58:22 IST" duration-ms="28001" status="PASS">
+>>>>>>> dc442eeb9f09fcd02cafd3e0c019e07919f5140b
 =======
         <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.CTS.TestNg.TestNGRunner@44c03695]" started-at="2025-07-17T14:16:31 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-17T14:17:13 IST" duration-ms="41050" status="PASS">
 >>>>>>> e43d8473d04542eedaa8126607a4fadb24888de7
@@ -120,7 +142,11 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
           </reporter-output>
         </test-method> <!-- runScenario -->
 <<<<<<< HEAD
+<<<<<<< HEAD
         <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.TestNg.TestNGRunner@682b2fa]" started-at="2025-07-17T10:58:55 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-17T11:00:28 IST" duration-ms="92497" status="PASS">
+=======
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.TestNg.TestNGRunner@682b2fa]" started-at="2025-07-17T10:58:22 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-17T10:59:16 IST" duration-ms="53883" status="PASS">
+>>>>>>> dc442eeb9f09fcd02cafd3e0c019e07919f5140b
 =======
         <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.CTS.TestNg.TestNGRunner@44c03695]" started-at="2025-07-17T14:17:13 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-17T14:18:23 IST" duration-ms="70043" status="PASS">
 >>>>>>> e43d8473d04542eedaa8126607a4fadb24888de7
@@ -140,7 +166,11 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
           </reporter-output>
         </test-method> <!-- runScenario -->
 <<<<<<< HEAD
+<<<<<<< HEAD
         <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.TestNg.TestNGRunner@682b2fa]" started-at="2025-07-17T11:00:28 IST" name="tearDownClass" finished-at="2025-07-17T11:00:28 IST" duration-ms="3" status="PASS">
+=======
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.TestNg.TestNGRunner@682b2fa]" started-at="2025-07-17T10:59:16 IST" name="tearDownClass" finished-at="2025-07-17T10:59:16 IST" duration-ms="5" status="PASS">
+>>>>>>> dc442eeb9f09fcd02cafd3e0c019e07919f5140b
 =======
         <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.CTS.TestNg.TestNGRunner@44c03695]" started-at="2025-07-17T14:18:23 IST" name="tearDownClass" finished-at="2025-07-17T14:18:23 IST" duration-ms="6" status="PASS">
 >>>>>>> e43d8473d04542eedaa8126607a4fadb24888de7
