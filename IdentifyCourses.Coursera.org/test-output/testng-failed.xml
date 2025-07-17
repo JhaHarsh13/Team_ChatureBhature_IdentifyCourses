@@ -6,8 +6,12 @@
       <class name="com.TestNg.TestNGRunner">
         <methods>
           <include name="setUpClass"/>
+<<<<<<< HEAD
           <include name="runScenario" invocation-numbers="0"/>
+=======
+>>>>>>> e43d8473d04542eedaa8126607a4fadb24888de7
           <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="0 1 2"/>
         </methods>
       </class> <!-- com.TestNg.TestNGRunner -->
     </classes>

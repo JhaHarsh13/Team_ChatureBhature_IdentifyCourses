@@ -1,4 +1,4 @@
-package com.CTS.Pges;
+package com.CTS.Pages;
 
 import java.time.Duration;
 import java.util.HashSet;
@@ -13,9 +13,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.CTS.ConfigureReader.ConfigReader;
 import com.CTS.UtilityPackage.ExcelUtils;
 
-import ConfigureReader.ConfigReader;
 
 public class LangLearningPage {
 	WebDriver driver;
@@ -23,7 +23,7 @@ public class LangLearningPage {
 	String baseUrl=ConfigReader.getProperty("baseUrl");
 	public LangLearningPage(WebDriver driver) {
 		this.driver=driver;
-		this.wait=new WebDriverWait(driver, Duration.ofSeconds(30));
+		this.wait=new WebDriverWait(driver, Duration.ofSeconds(20));
 		PageFactory.initElements(driver, this);
 	}
 	@FindBy(xpath="//*[@id='search-autocomplete-input']")
@@ -41,7 +41,7 @@ public class LangLearningPage {
 	@FindBy(xpath="//div[contains(@data-testid,'language:')]")
 	List <WebElement> listOfLanguage;
 	
-	public void enterElementandClickToSearchLang(String entry) {
+	public void enterElementandClickToSearchLang(String entry) throws Exception {
 		wait.until(ExpectedConditions.visibilityOf(inputField)).sendKeys(entry);
 		wait.until(ExpectedConditions.elementToBeClickable(searchButton)).click();
 		

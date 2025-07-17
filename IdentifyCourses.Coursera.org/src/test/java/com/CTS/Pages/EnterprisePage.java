@@ -1,4 +1,4 @@
-package com.CTS.Pges;
+package com.CTS.Pages;
 
 import java.io.File;
 import java.time.Duration;
@@ -22,7 +22,7 @@ public class EnterprisePage {
 	JavascriptExecutor js;
 	public EnterprisePage(WebDriver driver) {
 		this.driver=driver;
-		this.wait=new WebDriverWait(driver,Duration.ofSeconds(120));
+		this.wait=new WebDriverWait(driver,Duration.ofSeconds(20));
 		this.js=(JavascriptExecutor)driver;
 		PageFactory.initElements(driver,this);
 	}
