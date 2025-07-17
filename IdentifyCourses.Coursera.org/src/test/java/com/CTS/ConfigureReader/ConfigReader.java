@@ -1,4 +1,4 @@
-package ConfigureReader;
+package com.CTS.ConfigureReader;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
