@@ -1,25 +1,27 @@
-package com.Cognizant.cucumber.steps;
+package com.CTS.Cucumber.Steps;
 
 
-import com.CTS.Pges.EnterprisePage;
-import com.CTS.Pges.LangLearningPage;
-import com.CTS.Pges.WebDevelopmentPage;
+import com.CTS.ConfigureReader.ConfigReader;
+import com.CTS.PageUtils.PageReloadingClass;
+import com.CTS.Pages.EnterprisePage;
+import com.CTS.Pages.LangLearningPage;
+import com.CTS.Pages.WebDevelopmentPage;
 
-import ConfigureReader.ConfigReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.asserts.Assertion;
 
 public class StepDefinationFile {
 	private WebDriver driver=new ChromeDriver();
-	private WebDevelopmentPage webPage=new WebDevelopmentPage(driver);
-	private LangLearningPage langPage=new LangLearningPage(driver);
-	private EnterprisePage enterprisePage=new EnterprisePage(driver);
+	private WebDevelopmentPage webPage;
+	private LangLearningPage langPage;
+	private EnterprisePage enterprisePage;
 	private String baseUrl=ConfigReader.getProperty("baseUrl");
 	private String webDevEntry=ConfigReader.getProperty("entry1");
 	private String langLearnEntry=ConfigReader.getProperty("entry2");
@@ -30,14 +32,17 @@ public class StepDefinationFile {
 	private String title=ConfigReader.getProperty("title");
 	private String name=ConfigReader.getProperty("name");
 	
-	@Given("I open the Coursera.org home page")
-	public void open_CourseraOrg_Home_Page() {
+	@Given("I open the Coursera.org home page and wait for it to reload")
+	public void open_CourseraOrg_Home_Page() throws Exception {
 		driver.get(baseUrl);
+		driver.manage().window().maximize();
+		PageReloadingClass.waitForElementWithRefresh(driver, By.xpath("//*[@id='search-autocomplete-input']"), 2);
+		webPage=new WebDevelopmentPage(driver);
 		driver.manage().window().maximize();
 	}
 	
 	@When("I search Web Development")
-	public void searchWebDevelopment() {
+	public void searchWebDevelopment() throws Exception {
 		webPage.enterElementandClickToSearchWeb(webDevEntry);
 	}
 	
@@ -48,21 +53,24 @@ public class StepDefinationFile {
 	}
 	@Then("I should retrieve details of the first two course cards")
 	public void verifyIfableToRetrieveIfoOfFirstTwoCards() throws Exception{
-		System.out.println("Entered the method");
 		webPage.printingTheDesiredResult();
 		driver.quit();
 		
 	}
 	
-	@Given("I am on the Web Development page and go back to the Coursera.org home page")
-	public void navigating_to_CourseraOrg_Home_Page_again() {
+	@Given("I am on the Web Development page and go back to the Coursera.org home page and wait for it to reload")
+	public void navigating_to_CourseraOrg_Home_Page_again() throws Exception{
 		driver.navigate().to(baseUrl);
 		driver.manage().window().maximize();
+		PageReloadingClass.waitForElementWithRefresh(driver, By.xpath("//*[@id='search-autocomplete-input']"), 2);
+		driver.manage().window().maximize();
+		langPage=new LangLearningPage(driver);
+		
 	}
 	
 	
 	@When("I search Language Learning")
-	public void searchLanguageLearning() {
+	public void searchLanguageLearning() throws Exception {
 		langPage.enterElementandClickToSearchLang(langLearnEntry);
 	}
 	
@@ -73,11 +81,15 @@ public class StepDefinationFile {
 		driver.quit();
 	}
 	
-	@Given("I am on the Cousera.org page and I navigate to For Enterprise Page")
+	@Given("I am on the Cousera.org page and I wait for it to reload and I navigate to For Enterprise Page")
 	public void I_am_on_the_Cousera_org_page_and_I_navigate_to_For_Enterprise_Page() throws Exception{
 		driver.get(baseUrl);
 		driver.manage().window().maximize();
+		PageReloadingClass.waitForElementWithRefresh(driver, By.xpath("//a[contains(text(),'For Enterprise')]"), 2);
+		driver.manage().window().maximize();
+		enterprisePage=new EnterprisePage(driver);
 		enterprisePage.scrollAndClickForEnterprise();
+		
 	}
 	@When("I am on Enterprise page I scroll to Form")
 	public void I_am_on_Enterprise_page_I_scroll_to_Form() {
